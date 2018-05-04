@@ -17,7 +17,7 @@ public class Prueba{
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	int num;
 	String res;
-        System.out.print("Ingrese numero : ");
+        System.out.print("Ingrese el numero a convertir en letras : ");
         num = Integer.parseInt(in.readLine( ));
 		numero = new NumALetra(num);
 		res = numero.convertirLetras(num);

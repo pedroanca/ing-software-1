@@ -17,11 +17,11 @@ public class NumALetra {
     public String num;
     public String num_letra;
     public String num_letras;
-    public String num_letram;
-    public String num_letradm;
-    public String num_letracm;
-    public String num_letramm;
-    public String num_letradmm;
+    public String num_letramiles;
+    public String num_letradmiles;
+    public String num_letracmiles;
+    public String num_letramillon;
+    public String num_letradmillon;
 
     public NumALetra() {
         numero = 0;
@@ -235,87 +235,87 @@ public class NumALetra {
 
     private String miles(int numero) {
         if (numero >= 1000 && numero < 2000) {
-            num_letram = ("mil ").concat(centena(numero % 1000));
+            num_letramiles = ("mil ").concat(centena(numero % 1000));
         }
         if (numero >= 2000 && numero < 10000) {
             bandera = 1;
-            num_letram = unidad(numero / 1000).concat(" mil ").concat(centena(numero % 1000));
+            num_letramiles = unidad(numero / 1000).concat(" mil ").concat(centena(numero % 1000));
         }
         if (numero < 1000) {
-            num_letram = centena(numero);
+            num_letramiles = centena(numero);
         }
 
-        return num_letram;
+        return num_letramiles;
     }
 
     private String decmiles(int numero) {
         if (numero == 10000) {
-            num_letradm = "diez mil";
+            num_letradmiles = "diez mil";
         }
         if (numero > 10000 && numero < 20000) {
             bandera = 1;
-            num_letradm = decena(numero / 1000).concat("mil ").concat(centena(numero % 1000));
+            num_letradmiles = decena(numero / 1000).concat("mil ").concat(centena(numero % 1000));
         }
         if (numero >= 20000 && numero < 100000) {
             bandera = 1;
-            num_letradm = decena(numero / 1000).concat(" mil ").concat(miles(numero % 1000));
+            num_letradmiles = decena(numero / 1000).concat(" mil ").concat(miles(numero % 1000));
         }
 
         if (numero < 10000) {
-            num_letradm = miles(numero);
+            num_letradmiles = miles(numero);
         }
 
-        return num_letradm;
+        return num_letradmiles;
     }
 
     private String cienmiles(int numero) {
         if (numero == 100000) {
-            num_letracm = "cien mil";
+            num_letracmiles = "cien mil";
         }
         if (numero >= 100000 && numero < 1000000) {
             bandera = 1;
-            num_letracm = centena(numero / 1000).concat(" mil ").concat(centena(numero % 1000));
+            num_letracmiles = centena(numero / 1000).concat(" mil ").concat(centena(numero % 1000));
         }
         if (numero < 100000) {
-            num_letracm = decmiles(numero);
+            num_letracmiles = decmiles(numero);
         }
-        return num_letracm;
+        return num_letracmiles;
     }
 
     private String millon(int numero) {
         if (numero >= 1000000 && numero < 2000000) {
             bandera = 1;
-            num_letramm = ("Un millon ").concat(cienmiles(numero % 1000000));
+            num_letramillon = ("Un millon ").concat(cienmiles(numero % 1000000));
         }
         if (numero >= 2000000 && numero < 10000000) {
             bandera = 1;
-            num_letramm = unidad(numero / 1000000).concat(" millones ").concat(cienmiles(numero % 1000000));
+            num_letramillon = unidad(numero / 1000000).concat(" millones ").concat(cienmiles(numero % 1000000));
         }
         if (numero < 1000000) {
-            num_letramm = cienmiles(numero);
+            num_letramillon = cienmiles(numero);
         }
 
-        return num_letramm;
+        return num_letramillon;
     }
 
     private String decmillon(int numero) {
         if (numero == 10000000) {
-            num_letradmm = "diez millones";
+            num_letradmillon = "diez millones";
         }
         if (numero > 10000000 && numero < 20000000) {
             bandera = 1;
-            num_letradmm = decena(numero / 1000000).concat("millones ").concat(cienmiles(numero % 1000000));
+            num_letradmillon = decena(numero / 1000000).concat("millones ").concat(cienmiles(numero % 1000000));
         }
         if (numero >= 20000000 && numero < 100000000) {
             bandera = 1;
-            num_letradmm = decena(numero / 1000000).concat(" milllones ").concat(millon(numero % 1000000));
+            num_letradmillon = decena(numero / 1000000).concat(" milllones ").concat(millon(numero % 1000000));
         }
 
         if (numero < 10000000) {
-            num_letradmm = millon(numero);
+            num_letradmillon = millon(numero);
         }
 
-        return num_letradmm;
+        return num_letradmillon;
     }
 
     public String convertirLetras(int numero) {
